@@ -5,7 +5,7 @@ const HomeScreen = () => {
   return (
     <SafeAreaView>
         <View style={styles.container} > 
-            <Text>Hello World</Text>
+          <Text>Hello1</Text>
         </View>
     </SafeAreaView>
   )
@@ -16,9 +16,8 @@ export default HomeScreen
 const styles = StyleSheet.create({
     container:{
         display:'flex',
-        flexDirection:'row',
         gap:5,
         justifyContent:'center',
-
+        flexDirection:'row',
     }
 })

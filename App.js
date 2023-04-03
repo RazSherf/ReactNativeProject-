@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native';
 import HomeScreen from './Screens/HomeScreen';
 import TestScreen from './Screens/TestScreen';
+import SearchScreen from './Screens/SearchScreen';
+import SearchComponent from './Screens/SearchScreen'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <HomeScreen/>
-      <TestScreen/>
+      <SearchScreen/>
     </View>
   );
 }

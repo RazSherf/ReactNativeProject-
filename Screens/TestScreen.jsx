@@ -1,11 +1,13 @@
 import { StyleSheet, Text, View,SafeAreaView } from 'react-native'
-import React from 'react'
-
+import React,{useState} from 'react'
+import SearchComponent from './SearchScreen'
 const TestScreen = () => {
+
   return (
     <SafeAreaView>
         <View style={styles.container} > 
-            <Text>1</Text>
+            <SearchComponent/>
+            <Text>Testing</Text>
         </View>
     </SafeAreaView>
   )
@@ -16,7 +18,7 @@ export default TestScreen
 const styles = StyleSheet.create({
     container:{
         display:'flex',
-        flexDirection:'row',
+        flexDirection:'column',
         gap:5,
         justifyContent:'center'
     }
