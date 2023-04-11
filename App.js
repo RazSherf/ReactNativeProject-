@@ -1,24 +1,18 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 import HomeScreen from './Screens/HomeScreen';
-import TestScreen from './Screens/TestScreen';
 import SearchScreen from './Screens/SearchScreen';
-import SearchComponent from './Screens/SearchScreen'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <SearchScreen/>
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    display:'flex',
-    flexDirection:'row',
-    justifyContent:'space-evenly'
+const navigator = createStackNavigator({
+  Search : SearchScreen,
+  Home:HomeScreen,
 
-  },
-});
+},{
+  initialRouteName:'Search',
+  defaultNavigationOptions:{
+    title:'Search Screen For Restaurants'
+  }
+})
+
+export default createAppContainer(navigator)

@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View,SafeAreaView } from 'react-native'
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import SearchBarComponent from './SearchBarComponent'
+import ResultsList from '../components/ResultsList'
 import yelp from '../api/yelp'
 
 
@@ -33,15 +34,27 @@ const SearchScreen = () => {
   const onTermSubmit =()=>{
     searchApi()
   }
-  
+  useEffect(()=>{
+    searchApi('pizza')
+
+  },[])
+
+  const filterResultsByPrice = (price) =>{
+    // result can be: $ || $$ | $$$
+    return results.filter(result=>{
+      return result.price === price
+    })
+  }
+
   return (
    <SafeAreaView>
     <View style={styles.container}>
      <SearchBarComponent term={term} onTermSubmit={onTermSubmit} onTermChange={onTermChange}/>
-     <Text>Search Screen</Text>
-     <Text>{term}</Text>
-     <Text>WE have found {results.length} results</Text>
-     <Text>{errorMessage}</Text>
+     {errorMessage ? <Text> {errorMessage} </Text> :null}
+     <ResultsList results ={filterResultsByPrice('$')} title="Cost Effective"/>
+     <ResultsList results ={filterResultsByPrice('$$')} title="Bit Pricer"/>
+     <ResultsList results ={filterResultsByPrice('$$$')} title="Big Spender"/>
+     
     </View>
    </SafeAreaView>
   )
