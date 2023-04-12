@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View,SafeAreaView } from 'react-native'
 import React, {useState,useEffect} from 'react'
-import SearchBarComponent from './SearchBarComponent'
+import SearchBarComponent from '../components/SearchBarComponent'
 import ResultsList from '../components/ResultsList'
 import yelp from '../api/yelp'
 
@@ -48,24 +48,18 @@ const SearchScreen = () => {
 
   return (
    <SafeAreaView>
-    <View style={styles.container}>
+    <>
      <SearchBarComponent term={term} onTermSubmit={onTermSubmit} onTermChange={onTermChange}/>
      {errorMessage ? <Text> {errorMessage} </Text> :null}
-     <ResultsList results ={filterResultsByPrice('$')} title="Cost Effective"/>
-     <ResultsList results ={filterResultsByPrice('$$')} title="Bit Pricer"/>
-     <ResultsList results ={filterResultsByPrice('$$$')} title="Big Spender"/>
+     <ResultsList results ={filterResultsByPrice('$')} title="Cost Effective"  />
+     <ResultsList results ={filterResultsByPrice('$$')} title="Bit Pricer" />
+     <ResultsList results ={filterResultsByPrice('$$$')} title="Big Spender" />
      
-    </View>
+   </>
    </SafeAreaView>
   )
 }
 
 export default SearchScreen
 
-const styles = StyleSheet.create({
-  container:{
-    display:'flex',
-    flexDirection:'column'
-  }
-    
-})
+const styles = StyleSheet.create({})

@@ -24,13 +24,14 @@ export default SearchBar
 
 const styles = StyleSheet.create({
     background:{
-        backgroundColor:'#F0EEEE',
+        backgroundColor:'#E0E0E0',
         height:50,
         borderRadius:5,
         marginHorizontal:15,
         display:'flex',
         flexDirection:'row',
         marginTop:10,
+        marginBottom:10,
     },
     inputStyle:{
         flex:1,
