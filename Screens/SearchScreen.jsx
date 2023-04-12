@@ -16,7 +16,7 @@ const SearchScreen = () => {
       params:{
           limit:50,
           term,
-          location:'san jose'
+          location:'new york',
 
 
       }

@@ -30,17 +30,14 @@ const styles = StyleSheet.create({
         marginHorizontal:15,
         display:'flex',
         flexDirection:'row',
-        // alignItems:'center',
-        // width:290,
         marginTop:10,
-        // marginRight:85,
     },
     inputStyle:{
         flex:1,
        fontSize:18
     },
     icon:{
-        fontSize:35,
+        fontSize:25,
         alignSelf:'center',
         marginHorizontal:15
 
