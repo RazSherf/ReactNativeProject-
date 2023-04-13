@@ -4,6 +4,9 @@ import { withNavigation } from 'react-navigation'
 import ResultDetail from './ResultDetail'
 
 const ResultsList = ({title,results,navigation}) => {
+  if(!results.length){
+    return null;
+  }
   return (
     <View style={styles.container} >
       <Text style={styles.titleStyle}>{title}</Text>
@@ -14,7 +17,7 @@ const ResultsList = ({title,results,navigation}) => {
     keyExtractor={(result)=>result.id}
     renderItem={({item})=>{
         return (
-          <TouchableOpacity onPress={()=> navigation.navigate('ResultShow') }>
+          <TouchableOpacity onPress={()=> navigation.navigate('ResultShow',{id:item.id}) }>
             <ResultDetail result={item}/>
           </TouchableOpacity>
         )
@@ -29,7 +32,7 @@ export default withNavigation(ResultsList)
 const styles = StyleSheet.create({
   container:{
     marginBottom:10,
-    marginLeft:15,
+    marginLeft:0,
     marginTop:5
 
   },
